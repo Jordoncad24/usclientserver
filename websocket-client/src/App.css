@@ -1,0 +1,100 @@
+/* General Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f5f7;
+  color: #333;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.App-header {
+  margin-bottom: 20px;
+}
+
+/* Region Links */
+.region-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.region-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+.region-links a:hover {
+  color: #007bff;
+}
+
+.region-button {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  min-width: 200px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.region-button:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Region Data Display */
+.region-status {
+  text-align: left;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.region-status h2 {
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+.region-status p {
+  margin: 10px 0;
+}
+
+/* Services and Stats */
+.services, .server-stats, .worker-stats {
+  margin-top: 20px;
+}
+
+h3 {
+  color: #007bff;
+}
+
+.worker {
+  margin-top: 20px;
+}
+
+.worker h4 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  background-color: #f4f5f7;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
