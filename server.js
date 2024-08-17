@@ -3,9 +3,7 @@ const http = require('http');
 const WebSocket = require('ws');
 const axios = require('axios');
 const app = express();
-
 const server = http.createServer(app);
-
 const wss = new WebSocket.Server({ server });
 
 // Broadcast function to send data to all clients
@@ -58,8 +56,22 @@ regions.forEach(region => {
     });
 });
 
-// Start the server
+// Starting the server on port 8080
 const PORT = process.env.PORT || 8080;
 server.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });
+
+const socket = new WebSocket('ws://localhost:8080');
+
+socket.onopen = () => {
+    console.log('WebSocket connection opened');
+};
+
+socket.onmessage = (event) => {
+    console.log('Message from server: ', event.data);
+};
+
+socket.onclose = () => {
+    console.log('WebSocket connection closed');
+};
