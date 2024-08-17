@@ -16,12 +16,15 @@ const endpoints = [
 const server = new WebSocket.Server({ port: PORT });
 
 const fetchEndpointData = async () => {
-  const results = {};
+  const results = [];
   for (const endpoint of endpoints) {
     try {
       const response = await axios.get(endpoint);
       const region = endpoint.match(/--(.*)\.upscope/)[1];
-      results[region] = response.data;
+      const data = response.data;
+      data.region = region;
+      data.lastChecked = new Date().toISOString();
+      results.push(data);
     } catch (error) {
       console.error(`Failed to fetch data from ${endpoint}:`, error.message);
     }

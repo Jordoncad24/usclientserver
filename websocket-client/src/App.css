@@ -1,37 +1,102 @@
-.App-header {
+/* App.css */
+
+/* Importing Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f9fc; /* Light gray background similar to Upscope */
+  color: #333;
+}
+
+.App {
   text-align: center;
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+
+.App-header {
+  background-color: #ffffff; /* White background for the header */
+  border-radius: 12px;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 1200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #2d72d9; /* Upscope's primary blue color */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .status-board {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .region-status {
-  background-color: #3a3f47;
+  background-color: #ffffff;
+  border-radius: 8px;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
   text-align: left;
-  width: 250px;
+  margin-bottom: 20px;
 }
 
-h2 {
-  margin: 0;
-  margin-bottom: 10px;
+.region-status h2 {
   font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #2d72d9; /* Upscope's primary blue color */
 }
 
-p {
+.region-status p {
+  font-size: 1rem;
   margin: 5px 0;
+}
+
+.region-status .status-online {
+  color: #28a745; /* Green color for online status */
+}
+
+.region-status .status-offline {
+  color: #dc3545; /* Red color for offline status */
+}
+
+.services, .server-stats, .worker-stats {
+  margin-top: 20px;
+}
+
+.worker {
+  margin-bottom: 20px;
+}
+
+.worker h4 {
+  font-size: 1.2rem;
+  color: #2d72d9;
+}
+
+.worker ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.worker ul li {
+  background-color: #f0f2f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.worker ul li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .region-status {
+    width: 100%;
+  }
 }
