@@ -1,102 +1,100 @@
-/* App.css */
-
-/* Importing Inter font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-body {
+/* General Styles */
+body, html {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #f7f9fc; /* Light gray background similar to Upscope */
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f5f7;
   color: #333;
 }
 
 .App {
   text-align: center;
+  padding: 20px;
 }
 
 .App-header {
-  background-color: #ffffff; /* White background for the header */
-  border-radius: 12px;
-  padding: 30px;
-  margin: 20px auto;
-  max-width: 1200px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-  color: #2d72d9; /* Upscope's primary blue color */
-  font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
-.status-board {
+/* Region Links */
+.region-links {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
 }
 
-.region-status {
-  background-color: #ffffff;
+.region-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+.region-links a:hover {
+  color: #007bff;
+}
+
+.region-button {
+  background-color: #fff;
+  border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 800px;
+  min-width: 200px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.region-button:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Region Data Display */
+.region-status {
   text-align: left;
-  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 900px;
 }
 
 .region-status h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #2d72d9; /* Upscope's primary blue color */
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
 }
 
 .region-status p {
-  font-size: 1rem;
-  margin: 5px 0;
+  margin: 10px 0;
 }
 
-.region-status .status-online {
-  color: #28a745; /* Green color for online status */
-}
-
-.region-status .status-offline {
-  color: #dc3545; /* Red color for offline status */
-}
-
+/* Services and Stats */
 .services, .server-stats, .worker-stats {
   margin-top: 20px;
 }
 
+h3 {
+  color: #007bff;
+}
+
 .worker {
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .worker h4 {
-  font-size: 1.2rem;
-  color: #2d72d9;
+  color: #007bff;
+  margin-bottom: 10px;
 }
 
-.worker ul {
-  list-style-type: none;
-  padding: 0;
+ul {
+  list-style: none;
+  padding-left: 0;
 }
 
-.worker ul li {
-  background-color: #f0f2f5;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
+ul li {
+  background-color: #f4f5f7;
   margin-bottom: 5px;
-}
-
-.worker ul li:last-child {
-  margin-bottom: 0;
-}
-
-@media (max-width: 768px) {
-  .region-status {
-    width: 100%;
-  }
+  padding: 5px;
+  border-radius: 5px;
 }
