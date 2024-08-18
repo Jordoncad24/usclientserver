@@ -2,7 +2,7 @@ const WebSocket = require('ws');
 const axios = require('axios');
 const { Server } = require('ws');
 
-const PORT = 8080;
+const PORT = 10000;
 const INTERVAL = 10000;
 const TIMEOUT = 30000;
 
