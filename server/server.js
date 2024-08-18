@@ -3,6 +3,7 @@ const axios = require('axios');
 
 const PORT = 8080;
 const INTERVAL = 10000; // 10 seconds
+const TIMEOUT = 30000; // 30 seconds
 
 const endpoints = [
   'https://data--us-east.upscope.io/status?stats=1',
@@ -35,17 +36,36 @@ const fetchEndpointData = async () => {
 server.on('connection', (ws) => {
   console.log('Client connected');
 
+  // Set a timeout for the WebSocket connection
+  const connectionTimeout = setTimeout(() => {
+    ws.terminate(); // Terminate the connection if no activity within TIMEOUT
+    console.log('Client connection timed out');
+  }, TIMEOUT);
+
   const sendUpdates = async () => {
-    const data = await fetchEndpointData();
-    ws.send(JSON.stringify(data));
+    try {
+      const data = await fetchEndpointData();
+      ws.send(JSON.stringify(data));
+    } catch (error) {
+      console.error('Error sending updates:', error.message);
+    }
   };
 
   sendUpdates();
   const interval = setInterval(sendUpdates, INTERVAL);
 
+  ws.on('message', (message) => {
+    // Handle incoming messages if needed
+  });
+
   ws.on('close', () => {
     clearInterval(interval);
+    clearTimeout(connectionTimeout);
     console.log('Client disconnected');
+  });
+
+  ws.on('error', (error) => {
+    console.error('WebSocket error:', error.message);
   });
 });
 
