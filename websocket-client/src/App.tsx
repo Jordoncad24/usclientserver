@@ -39,7 +39,7 @@ const App: React.FC = () => {
   const [data, setData] = useState<RegionData[]>([]);
 
   useEffect(() => {
-    const ws = new WebSocket('ws://localhost:10000');
+    const ws = new WebSocket('https://usclientserver-9.onrender.com');
 
     ws.onmessage = (event) => {
       const receivedData: RegionData[] = JSON.parse(event.data);
